@@ -1,3 +1,21 @@
+<?php
+    $msg="";
+    if(isset($_POST["submit"]))
+    {
+        include_once("dbconnect.php");
+        $name=$_POST["name"];
+        $mail=$_POST["email"];
+        $query="insert into subscribers values('$name','$mail')";
+        mysqli_query($dbcon,$query);
+        $msg=mysqli_error($dbcon);
+        if($msg=="")
+            $msg="Thank You for Subscribing...";
+        else
+            $msg="Some error occured try again";
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +96,7 @@
 					Entrepreneurship Development Cell's <span class="m1-txt2">Pitchers 5.0</span>, coming soon! Stay Tuned!
 				</p>
 
-				<form class="contact100-form validate-form">
+				<form class="contact100-form validate-form" method="post" action="index.php">
 					<div class="wrap-input100 m-b-10 validate-input" data-validate = "Name is required">
 						<input class="s2-txt1 placeholder0 input100" type="text" name="name" placeholder="Your Name">
 						<span class="focus-input100"></span>
@@ -90,10 +108,12 @@
 					</div>
 
 					<div class="w-full">
-						<button class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-04">
+						<button type="submit" class="flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-04" name="submit" value="submit">
 							Subscribe
 						</button>
 					</div>
+                    <div class="m1-txt1"><?php if(isset($msg)){ echo $msg; } ?></div>
+
 				</form>
 
 				
@@ -110,8 +130,6 @@
 
 				<a href="https://www.facebook.com/edctiet" class="flex-c-m size5 bg3 how1 trans-04 m-r-5">
 					<i class="fa fa-facebook"></i>
-				</a>
-
 				</a>
 			</div>
 		</div>
