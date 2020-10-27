@@ -64,26 +64,55 @@
 
 			<div id="fix2" class="wsize2 flex-w flex-c-m cd100 js-tilt" style="padding-top:79px;">
 				<div class="flex-col-c-m size6 bor2 m-l-10 m-r-10 m-t-15">
-					<span class="l2-txt1 p-b-9 days">35</span>
+					<span id="day" class="l2-txt1 p-b-9"></span>
 					<span class="s2-txt4">Days</span>
 				</div>
 
 				<div class="flex-col-c-m size6 bor2 m-l-10 m-r-10 m-t-15">
-					<span class="l2-txt1 p-b-9 hours">17</span>
+					<span id="hour" class="l2-txt1 p-b-9"></span>
 					<span class="s2-txt4">Hours</span>
 				</div>
 
 				<div class="flex-col-c-m size6 bor2 m-l-10 m-r-10 m-t-15">
-					<span class="l2-txt1 p-b-9 minutes">50</span>
+					<span id="minute" class="l2-txt1 p-b-9"></span>
 					<span class="s2-txt4">Minutes</span>
 				</div>
 
 				<div class="flex-col-c-m size6 bor2 m-l-10 m-r-10 m-t-15">
-					<span class="l2-txt1 p-b-9 seconds">39</span>
+					<span id="second" class="l2-txt1 p-b-9"></span>
 					<span class="s2-txt4">Seconds</span>
 				</div>
 			</div>
 		</div>
+		<script>
+			function countdown() {
+				var now = new Date();
+				var over_time = new Date("November 08, 2020 09:00:00");
+
+				var now_time = now.getTime();
+				var over = over_time.getTime();
+				var end_time = over - now_time;
+
+				var days = Math.floor(end_time / (1000 * 60 * 60 * 24));
+				var hours = Math.floor((end_time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				var minutes = Math.floor((end_time % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((end_time % (1000 * 60)) / 1000);
+				if (hours < "10") { hours = "0" + hours; }
+				if (minutes < "10") { minutes = "0" + minutes; }
+				if (seconds < "10") { seconds = "0" + seconds; } 
+
+				console.log(seconds)
+			
+				document.getElementById("day").innerHTML = days;
+				document.getElementById("hour").innerHTML = hours;
+				document.getElementById("minute").innerHTML = minutes;
+				document.getElementById("second").innerHTML = seconds;
+
+				setTimeout(countdown, 1000);
+
+			}
+			countdown();
+		</script>
 		
 		<!-- Form -->
 		<div class="size3 flex-col-sb flex-w p-l-75 p-r-75 p-t-45 p-b-45 respon1">
@@ -147,7 +176,7 @@
 <!--===============================================================================================-->
 	<script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
-	<script src="vendor/countdowntime/moment.min.js"></script>
+	<!-- <script src="vendor/countdowntime/moment.min.js"></script>
 	<script src="vendor/countdowntime/moment-timezone.min.js"></script>
 	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
 	<script src="vendor/countdowntime/countdowntime.js"></script>
@@ -165,7 +194,7 @@
 			// ex:  timeZone: "America/New_York"
 			//go to " http://momentjs.com/timezone/ " to get timezone
 		});
-	</script>
+	</script> -->
 <!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>
 	<script >
