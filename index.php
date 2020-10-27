@@ -157,7 +157,7 @@
 			/*Endtime must be > current time*/
 			endtimeYear: 0,
 			endtimeMonth: 0,
-			endtimeDate: 35,
+			endtimeDate: 11,
 			endtimeHours: 18,
 			endtimeMinutes: 0,
 			endtimeSeconds: 0,
