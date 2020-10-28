@@ -149,15 +149,15 @@
 			</div>
 
 			<div class="flex-w">
-				<a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/" class="flex-c-m size5 bg4 how1 trans-04 m-r-5">
+				<a href="https://www.linkedin.com/school/entrepreneurship-development-cell-thapar-university/" class="flex-c-m size5 bg4 how1 trans-04 m-r-5" style="text-decoration: none">
 					<i class="fa fa-linkedin"></i>
 				</a>
 
-				<a href="https://www.instagram.com/edc_tiet/" class="flex-c-m size5 bg5 how1 trans-04 m-r-5">
+				<a href="https://www.instagram.com/edc_tiet/" class="flex-c-m size5 bg5 how1 trans-04 m-r-5" style="text-decoration: none">
 					<i class="fa fa-instagram"></i>
 				</a>
 
-				<a href="https://www.facebook.com/edctiet" class="flex-c-m size5 bg3 how1 trans-04 m-r-5">
+				<a href="https://www.facebook.com/edctiet" class="flex-c-m size5 bg3 how1 trans-04 m-r-5" style="text-decoration: none">
 					<i class="fa fa-facebook"></i>
 				</a>
 			</div>
