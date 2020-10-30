@@ -87,7 +87,7 @@
 		<script>
 			function countdown() {
 				var now = new Date();
-				var over_time = new Date("November 08, 2020 09:00:00");
+				var over_time = new Date("November 08, 2020 09:00:01");
 
 				var now_time = now.getTime();
 				var over = over_time.getTime();
